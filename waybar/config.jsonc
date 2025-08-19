@@ -3,27 +3,27 @@
   "layer": "bottom",
   "position": "top",
   "spacing": 0,
-  "height": 30,
-  "margin-left": 8,
-  "margin-right": 8,
-  "margin-top": 6,
+  "height": 40,
+  "margin-top": 13,
+  "margin-right": 13,
+  "margin-left": 13,
   "modules-left": [
-    "clock",
-    "hyprland/workspaces"
-  ],
-  "modules-center": [
-    "custom/spotify"
-  ],
-  "modules-right": [
-    "privacy",
-    "pulseaudio",
+    "niri/workspaces",
     "bluetooth",
     "network",
+    "power-profiles-daemon",
+    "privacy",
+  ],
+  "modules-center": [
+    "custom/notification",
+    "clock",
+  ],
+  "modules-right": [
+    "pulseaudio",
     "disk",
     "temperature",
     "cpu",
     "memory",
-    "power-profiles-daemon",
     "battery"
   ],
   "custom/launcher": {
@@ -49,9 +49,9 @@
     "format-icons": {
       "1": "<b>1</b>",
       "2": "<b>2</b>",
-      "3": "",
-      "4": "",
-      "5": "",
+      "3": "<b>3</b>",
+      "4": "<b>4</b>",
+      "5": "<b>5</b>",
       "6": "<b>6</b>",
       "7": "<b>7</b>",
       "8": "<b>8</b>",
@@ -60,6 +60,24 @@
     },
     "persistent-workspaces": {
       "*": 5
+    }
+  },
+  "niri/workspaces": {
+    "on-click": "activate",
+    "current-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<b>1</b>",
+      "2": "<b>2</b>",
+      "3": "<b>3</b>",
+      "4": "<b>4</b>",
+      "5": "<b>5</b>",
+      "6": "<b>6</b>",
+      "7": "<b>7</b>",
+      "8": "<b>8</b>",
+      "9": "<b>9</b>",
+      "10": "<b>10</b>"
     }
   },
   "pulseaudio": {
@@ -91,7 +109,7 @@
     ]
   },
   "clock": {
-    "format": " {:%a/%d/%m │ %I:%M %p} ",
+    "format": " {:%I:%M %p  %d/%m/%y} ",
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -102,7 +120,8 @@
         "weekdays": "<span color='#d65d0e'><b>{}</b></span>",
         "today": "<span color='#fb4934'><b><i>{}</i></b></span>"
       }
-    }
+    },
+    "on-click": "gnome-calendar"
   },
   "battery": {
     "states": {
@@ -141,7 +160,7 @@
   },
   "memory": {
     "interval": 1,
-    "format": "{}% ",
+    "format": "{}%  ",
     "tooltip": true,
     "tooltip-format": "Memory Usage: {used:0.1f}G/{total:0.1f}G",
     "on-click": "kitty btop"
@@ -199,8 +218,28 @@
       }
     ]
   },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫 ",
+      "none": " ",
+      "dnd-notification": " ",
+      "dnd-none": "󰂛 ",
+      "inhibited-notification": " ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
   "power-profiles-daemon": {
-    "format": "│ {icon}",
+    "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {

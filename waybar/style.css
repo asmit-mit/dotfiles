@@ -18,91 +18,65 @@
 }
 
 .bar {
-  border-top: 3px solid;
-  border-bottom: 3px solid;
   border-color: @hard_background;
   background-color: @background;
-  font-size: 14px;
+  font-size: 18px;
+  border: 2px solid @color_grey;
 }
 
 tooltip {
   background: @background;
-  font-size: 10px;
+  font-size: 22px;
   opacity: 0.9;
-  border-radius: 0px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @hard_background;
+  border: 2px solid @hard_background;
+  border-radius: 0;
 }
 
 .modules-right {
-  font-size: 9.8px;
-  border-top: 3px solid;
-  border-right: 3px solid;
-  border-bottom: 3px solid;
-  border-color: @hard_background;
-}
-
-.modules-center {
-  border-top: 3px solid;
-  border-bottom: 3px solid;
-  border-color: @hard_background;
-}
-
-.modules-left {
-  background-color: @background;
-  border-top: 3px solid;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-  border-color: @hard_background;
+  font-size: 14px;
 }
 
 #clock {
-  font-size: 10px;
-  background-color: @background;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-right: 1em;
-  padding-top: 3px;
-  padding-left: 1em;
-  border-right: 3px;
-  border-right-style: solid;
-  border-right-color: @color_yellow;
 }
 
 #workspaces {
-  background-color: @background;
   color: @foreground;
+  border-right: 3px solid @color_yellow;
   padding-left: 1em;
-  font-size: 9.9px;
+  padding-right: 1em;
+  margin: 2px 0;
+  font-size: 14px;
 }
 
 #workspaces button {
   color: @foreground;
   padding: 0 6px;
-  font-size: 9.9px;
+  margin: 3px 0;
+  border-radius: 10px;
 }
 #workspaces button:hover {
   background-color: @color_aqua;
   color: #000000;
+  font-size: 18px;
 }
-#workspaces button.visible.active {
+#workspaces button.active {
   color: @color_red;
-  font-size: 12.5px;
+  font-size: 18px;
 }
-#workspaces button.visible {
-  color: @color_aqua;
-}
+
 #workspaces button.active:hover {
   background-color: @color_aqua;
   color: #000000;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 #battery {
   padding-left: 0.5em;
   padding-right: 1em;
-}
-#battery.charging,
-#battery.plugged {
 }
 
 #memory {
@@ -129,33 +103,34 @@ tooltip {
 }
 
 #network {
-  padding-right: 2em;
+  padding-right: 1em;
   padding-left: 1em;
 }
 
 #bluetooth {
   padding-right: 1em;
-  padding-left: 1em;
+  padding-left: 1.3em;
 }
 
 #pulseaudio {
-  padding-right: 1em;
+  padding-right: 1.3em;
   padding-left: 1em;
 }
 
 #privacy {
-  font-size: 9.8px;
+  font-size: 18px;
+  /* border-left: 3px solid @color_blue; */
   padding-right: 1em;
   padding-left: 1em;
 }
 
 #custom-spotify {
-  font-size: 12.5px;
+  font-size: 14px;
   padding-right: 1em;
   padding-left: 1em;
 }
 
 #power-profiles-daemon {
-  padding-right: 0.5em;
+  padding-right: 1em;
   padding-left: 1em;
 }
